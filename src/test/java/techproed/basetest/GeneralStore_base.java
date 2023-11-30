@@ -10,7 +10,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
 
-public class ApiDemos_base {
+public class GeneralStore_base {
 
     protected AndroidDriver driver;
 
@@ -20,7 +20,7 @@ public class ApiDemos_base {
                 File.separator+"src"+
                 File.separator+"test"+
                 File.separator+"resources"+
-                File.separator+"ApiDemos-debug.apk";
+                File.separator+"General-Store.apk";
 
         UiAutomator2Options options=new UiAutomator2Options();
         options.setApp(aapUrl);
