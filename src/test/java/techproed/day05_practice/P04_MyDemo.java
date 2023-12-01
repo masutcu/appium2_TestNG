@@ -78,6 +78,13 @@ public class P04_MyDemo extends MyDemo_Base {
         Assert.assertTrue(driver.findElement(blueCircle).isDisplayed());
         Assert.assertTrue(driver.findElement(redCircle).isDisplayed());
 
+        //PEŞPEŞE XPATH KULLANIMI
+        List<WebElement> blueCircle2 = driver.findElements(AppiumBy.xpath("(//android.view.ViewGroup[@content-desc=\"product row\"])[1]//android.view.ViewGroup[contains(@content-desc, 'blue circle')]"));
+        Assert.assertFalse(blueCircle2.isEmpty());
+
+        Assert.assertTrue(driver.findElement(redCircle).isDisplayed());
+
+
 
     }
 }

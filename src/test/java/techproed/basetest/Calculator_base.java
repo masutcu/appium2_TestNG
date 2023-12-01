@@ -11,20 +11,16 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
 
-public class GeneralStore_base extends ReusableMethods {
+public class Calculator_base extends ReusableMethods {
 
     protected AndroidDriver driver;
 
     @BeforeClass
     public void setUp() throws MalformedURLException {
-        String aapUrl=System.getProperty("user.dir")+
-                File.separator+"src"+
-                File.separator+"test"+
-                File.separator+"resources"+
-                File.separator+"General-Store.apk";
 
-        UiAutomator2Options options=new UiAutomator2Options();
-        options.setApp(aapUrl);
+        UiAutomator2Options options = new UiAutomator2Options()
+                .setAppPackage("com.google.android.calculator")
+                .setAppActivity("com.android.calculator2.Calculator");
 
         URL url=new URL("http://0.0.0.0:4723");
 

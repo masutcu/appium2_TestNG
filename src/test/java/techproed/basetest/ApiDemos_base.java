@@ -4,13 +4,14 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import techproed.utilities.ReusableMethods;
 
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
 
-public class ApiDemos_base {
+public class ApiDemos_base extends ReusableMethods {
 
     protected AndroidDriver driver;
 
