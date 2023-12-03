@@ -45,7 +45,7 @@ public class C11_ScrollGesture extends ApiDemos_base {
         boolean canScrollMore=true;
         while (canScrollMore){
         canScrollMore=(Boolean) driver.executeScript("mobile: scrollGesture", ImmutableMap.of(
-                "left", 100, "top", 100,"width", 200, "height", 200,
+                "left", 100, "top", 100,"width", 200, "height", 200, //left ve top başlangıç noktası. width ve height sanal elementin genişliği ve yüksekliğidir.
                 //Burada sona gelene kadar tekrar eden bir eylem içine giriyor
                 "direction", "down",
                 "percent", 3.0,
