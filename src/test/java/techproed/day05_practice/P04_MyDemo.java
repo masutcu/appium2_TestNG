@@ -46,6 +46,7 @@ public class P04_MyDemo extends MyDemo_Base {
 
         //Burada login butonunu görebilmek için klavyeyi kapatmamız lazım
         driver.hideKeyboard();
+
         Thread.sleep(1);
 
         WebElement loginButton = driver.findElement(AppiumBy.accessibilityId("Login button"));

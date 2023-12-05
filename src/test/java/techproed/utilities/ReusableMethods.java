@@ -7,6 +7,15 @@ import org.openqa.selenium.remote.RemoteWebElement;
 
 public class ReusableMethods {
 
+    public void bekle(int second){
+        try {
+            Thread.sleep(second*1000);
+        } catch (InterruptedException e) {
+            System.out.println("Bekleme yapilamadi");
+            throw new RuntimeException(e);
+        }
+    }
+
     public void clickGesture(AndroidDriver driver, WebElement element){
         driver.executeScript("mobile: clickGesture", ImmutableMap.of(
                 "elementId", ((RemoteWebElement) element).getId()
