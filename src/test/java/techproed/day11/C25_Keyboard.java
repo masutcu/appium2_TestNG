@@ -42,6 +42,7 @@ public class C25_Keyboard extends ApiDemos_base {
         driver.findElement(AppiumBy.accessibilityId("TextFields")).click();
         driver.findElement(AppiumBy.id("io.appium.android.apis:id/edit")).click();
 
+
         driver.pressKey(new KeyEvent(AndroidKey.A));
         driver.pressKey(new KeyEvent(AndroidKey.L));
         driver.pressKey(new KeyEvent(AndroidKey.I));
