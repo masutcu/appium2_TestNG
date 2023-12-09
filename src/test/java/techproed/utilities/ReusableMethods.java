@@ -4,6 +4,10 @@ import com.google.common.collect.ImmutableMap;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class ReusableMethods {
 
@@ -14,6 +18,13 @@ public class ReusableMethods {
             System.out.println("Bekleme yapilamadi");
             throw new RuntimeException(e);
         }
+    }
+
+    //explicitwait
+    public static void visibleWait(AndroidDriver driver, WebElement element, int sayi) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(sayi));
+        wait.until(ExpectedConditions.visibilityOf(element));
+
     }
 
     public void clickGesture(AndroidDriver driver, WebElement element){
