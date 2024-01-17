@@ -32,6 +32,7 @@ public class P08_HybridApp extends GeneralStore_base {
         WebElement button = driver.findElement(AppiumBy.id("com.androidsample.generalstore:id/btnLetsShop"));
         button.click();
         //Ürün Seçimi
+        //önce elemente kadar scroll
         driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Converse All Star\"))"));
         driver.findElements(AppiumBy.xpath("//android.widget.TextView[@text=\"ADD TO CART\"]")).get(1).click();
         driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"LeBron Soldier 12 \"))"));
@@ -61,7 +62,7 @@ public class P08_HybridApp extends GeneralStore_base {
         //Visit
         WebElement visitButton = driver.findElement(AppiumBy.id("com.androidsample.generalstore:id/btnProceed"));
         visitButton.click();
-        bekle(5);
+        bekle(5);//Bu bekleme olmaz ise  web sayfası açılmadan contex alıyor ve web sayfasının context değerini vermiyor
         //Hibrit Uygulama
         // Sadece Web context'inin değerini alabilmek için bu kodu yazmaya ihtiyacım var.
 //        Set<String> contextHandles = driver.getContextHandles();
@@ -69,9 +70,10 @@ public class P08_HybridApp extends GeneralStore_base {
 //            System.out.println(contextName);
 //        }
         driver.context("WEBVIEW_com.androidsample.generalstore");
+        //artık web UI dayız
         //Arama motoru
         driver.findElement(By.name("q")).sendKeys("Temel Reis", Keys.ENTER);
-        //Native Uygulama
+        //Native Uygulamaya geçiyoruz
         driver.pressKey(new KeyEvent(AndroidKey.BACK));
         driver.context("NATIVE_APP");
         // Başlık Doğrulaması

@@ -38,12 +38,15 @@ public class C01_SetUp_Driver {
         AndroidDriver driver=new AndroidDriver(url,capabilities);
 
     }
-    //2. appiumdan gelen UiAutomator2 android driver ı ile
+    //2. appiumdan gelen UiAutomator2 android driver ı ile  BİZ BUNU TERCİH EDİYORUZ-ANDROİD İÇİN
     @Test
     public void testUiAutomator2Options() throws MalformedURLException {
         //url i file sapareror ile tanımlarsak tüm bilgisayarlarda ayrı ayar yapmamız gerekmez.
         String aapUrl=System.getProperty("user.dir")+
-                File.separator+"src"+File.separator+"test"+File.separator+"resources"+File.separator+"ApiDemos-debug.apk";
+                File.separator+"src"+
+                File.separator+"test"+
+                File.separator+"resources"+
+                File.separator+"ApiDemos-debug.apk";
 
         // eğer uiautomator2options (bu zaten android driverı) kullanırsak platform name ve driver default oarak
         // tanımlı olduğu için tekrar tanımlamaya gerek yok.
@@ -51,7 +54,7 @@ public class C01_SetUp_Driver {
         //options.setUdid("52007ec4f08e6587");//DİKKAT:bu id gerçek cihazım. emülatör kullanıldığında kaldırılmalıdır.Tek cihaz bağlı ise hiç tanımlama yapılmayabilir.
         options.setUdid("emulator-5554");//DİKKAT:bu emulator cihazım.
         //options.setApp("C:\\Users\\Lenovo\\IdeaProjects\\Appium_Upskills\\src\\test\\resources\\ApiDemos-debug.apk");//tek cihaz bağlıyken sadece bu olsa yeterli
-        options.setApp(aapUrl);
+        options.setApp(aapUrl); //Bu varsa aşağıdaki ayarlara gerek yok
         //  options.setAppPackage("io.appium.android.apis");
         //  options.setAppActivity("io.appium.android.apis.ApiDemos");
 

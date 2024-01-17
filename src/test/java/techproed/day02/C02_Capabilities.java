@@ -14,8 +14,8 @@ public class C02_Capabilities {
 
         UiAutomator2Options options=new UiAutomator2Options()
         .setApp("C:\\Users\\Lenovo\\IdeaProjects\\Appium_Upskills\\src\\test\\resources\\ApiDemos-debug.apk")
-                .setAvd("pixel5q")       //kapalı emülatörü açmak için bu isim sanal chzınavid olarak detail tanımlamasında olur.
-                .setAvdLaunchTimeout(Duration.ofMinutes(5))
+                .setAvd("pixel5q") //kapalı emülatörü açmak için (jenkinsde çalıştıracaksak önce açmak için)bu isim sanal chzın avid olarak detail tanımlamasında olur.
+                .setAvdLaunchTimeout(Duration.ofMinutes(5)) //default 60sn
                 ;
         URL url=new URL("http://0.0.0.0:4723");
         AndroidDriver driver=new AndroidDriver(url,options);
